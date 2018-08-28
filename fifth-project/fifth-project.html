@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fifth_project</title>
+	<style>
+		* {
+			box-sizing:border-box;
+			}
+		body {
+			font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+			}
+		.clearfix::after {
+			content: "";
+			clear: both;
+			display: table;
+			}
+		h1 {
+			margin: auto;
+			}
+		h2 {
+			text-transform: uppercase;
+			text-align: center;
+			}
+		navbar {
+			position: sticky;
+			top:0;
+			margin:auto;
+			}
+		#projects-section {
+			
+			}
+		.project-tile {
+			display:flex;
+			}
+		ul {
+			list-style-type: none;
+			text-transform: uppercase;
+			margin: auto;
+			display: inline;
+			float: right;
+			margin-right: 50px;
+		}
+		li {
+			display: inline;
+		}
+		li a {
+			text-decoration: none;
+			color: black;
+			background-color:bisque;
+			padding: 10px;
+			border: 2px solid bisque;
+			border-radius: 10px;
+		}
+		li a:hover {
+			background-color:cornsilk;
+		}
+		#welcome-section {
+			display: block;
+			text-align: center;
+			height: 100%;
+		}
+		@media screen and (max-width: 480px) {			
+			navbar {
+				margin: auto;
+				content: "";
+				clear: both;
+				display: table;
+				}
+			ul {
+				width: 100%;
+				margin: auto
+				}
+			li a {display:block;
+				width: 100px;
+				margin: 10px;
+				text-align: center;
+				}
+		}
+	</style>
+</head>
+
+<body>
+	<nav id="navbar" class="clearfix">
+	<!-- 
+		User Story #6: My portfolio should have a navbar with an id of "navbar".
+		User Story #7: The navba should contain at least one link that I can click on to navigate to different sections of the page. -->
+		<ul>
+			<li><a href="#">About</a></li>
+			<li><a href="#projectts-section">Projects</a></li>
+			<li><a id= "profile-link" href="https://github.com/publikwerker" target="new">Profile</a></li>
+			<!-- 
+				User Story #8: My portfolio should have alink with an id of "profile-link", which opens my GitHub or FCC profile in a new tab. -->
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+	</nav><br />
+	<section id="welcome-section">
+	<!-- 
+		User Story #1: My porfolio should have a welcome setion with an id of "welcome-section" -->
+	<h1>Welcome to Publikwerks</h1>
+	<!--
+		User Story #2: The welcome section should have an h1 element that contains text. -->
+	</section>
+	<section id="projects-section">
+	<!-- 
+		User Story #3: my portfolio should have a projects section with an id of "projets-section" -->
+		<h2>Projects</h2>
+		<content class="project-tile">
+		<!-- 
+			User Story #4: The projects section should contain at least one element with a class of "project-tile" to hold a project.
+			User Story #5: The projects section should contain at least one link to a project. -->
+	
+		</content>
+	</section>
+</body>
+</html>
