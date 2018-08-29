@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fifth_project</title>
+	<style>
+		* {
+			box-sizing:border-box;
+			}
+		body {
+			font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+			max-width: 1200px;
+			margin: auto;
+			background-color: aliceblue;
+			}
+		h1 {
+			margin: auto;
+			font-size: 1.6em;
+			letter-spacing: 5px;
+			}
+		h2 {
+			text-transform: none;
+			text-align: center;
+			}
+		p {
+			width: 80%;
+			margin: auto;
+			font-size: 1.2em;
+			line-height: 1.4;
+			text-indent: 20px;
+			text-align: left;
+			}
+		section {
+			margin-top: 20px;
+			border: 1px solid lightgray;}
+			}
+		
+		
+		/* This is the code for the project blocks */
+		div.gallery {
+			margin: 5px;
+    		border: 1px solid #ccc;
+    		float: left;
+    		width: 180px;
+			}
+		div.gallery:hover {
+			border: 1px solid #777;
+			opacity: .5;
+			filter: alpha(opacity=50); /* For IE8 and earlier */
+			}
+		div.gallery img {
+			width: 100%;
+			height: auto;
+			}
+		div.desc {
+    		padding: 15px;
+    		text-align: center;
+			}
+		.project-tile {
+			display: inline;
+			align-content: center;
+			}
+		
+		
+		/* This is the code for the navbar  */
+		#navbar {
+			position: fixed;
+			top:0;
+			display: inline-flex;
+			width: 100%;
+			background-color: aliceblue;
+			height: 70px;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			align-content:center;
+		margin-left: 0px;}
+		ul {
+			list-style-type: none;
+			text-transform: uppercase;
+			margin: auto;
+			}
+		li {
+			display: inline-block;
+			}
+		li a {
+			text-decoration: none;
+			color: black;
+			background-color:bisque;
+			padding: 10px;
+			border: 2px solid bisque;
+			border-radius: 10px;
+			}
+		li a:hover {
+			background-color:cornsilk;
+			}
+		
+		
+		#welcome-section {
+			display: block;
+			text-align: center;
+			height: 100%;
+			margin-top: 70px;
+			padding: 50px;
+			}
+		#projects-section {
+			}
+		#contact-section {}
+		
+		@media screen and (max-width: 480px) {	
+			navbar {
+				width: 100%;
+				margin: auto;
+				justify-content: center;
+				}
+			li {display: block;
+				width: 100%;
+			align-content: space-around;
+			margin: auto;}
+			li a {
+				text-align: center;
+				}
+			}
+	</style>
+</head>
+
+<body>
+	
+	<nav id="navbar" class="clearfix">
+	<!-- 
+		User Story #6: My portfolio should have a navbar with an id of "navbar".
+		User Story #7: The navba should contain at least one link that I can click on to navigate to different sections of the page. -->
+		<ul>
+			<li><a href="#welcome-section">About</a></li>
+			<li><a href="#projects-section">Projects</a></li>
+			<li><a id= "profile-link" href="https://github.com/publikwerker/" target="new">Profile</a></li>
+			<!-- 
+				User Story #8: My portfolio should have alink with an id of "profile-link", which opens my GitHub or FCC profile in a new tab. -->
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+	</nav><br />
+	
+	<section id="welcome-section">
+	<!-- 
+		User Story #1: My porfolio should have a welcome setion with an id of "welcome-section" -->
+	<h1>Welcome to Publikwerks</h1>
+	<!--
+		User Story #2: The welcome section should have an h1 element that contains text. -->
+		<h2>Home to Publikwerker, Web Developer and  Fine Artist Extraordinaire</h2>
+		<p>After a brief stint in the US Navy, Publikwerker began his education at Kansas University. Initially a Physics major, Publikwerker soon switched to Communication Design, and eventually triple  majored in Graphic Design, Illustration, and Painting.</p>
+		<p>Ten years later, and over 1,500 miles away in Portland, Oregon, the Pacific Northwest College of Art graduated him with a Painting/Drawing degree. </p>
+		<p>For almost another decade, Publikwerker ran a commercial printing shop in S.E Portland. Now, he's taking his Fine Art background and his Production experience and applying it to Web Development.</p>
+	</section>
+	<section id="projects-section">
+	<!-- 
+		User Story #3: my portfolio should have a projects section with an id of "projets-section" -->
+		<h2>Projects</h2>
+		<content class="project-tile">
+		<!-- 
+			User Story #4: The projects section should contain at least one element with a class of "project-tile" to hold a project.
+			User Story #5: The projects section should contain at least one link to a project. -->
+			<div class="gallery">
+  				<a target="_blank" href="images/nancy commission.jpg">
+    				<img src="images/nancy commission.jpg" alt="cessna over an airfield" width="300" height="200">
+  				</a>
+  				<div class="desc">a commission for a pilot of his plane and his favorite airfield.</div>
+			</div>
+		</content>
+		<content class="project-tile">
+			<div class="gallery">
+  				<a target="_blank" href="images/falconflyby2.jpg">
+    				<img src="images/falconflyby2.jpg" alt="Millenium Falcon taking off over a nice split level ranch home." width="300" height="200">
+  				</a>
+  				<div class="desc">one of many "house portraits" I have been asked to do.</div>
+			</div>
+		</content>
+		<content class="project-tile">
+			<div class="gallery">
+  				<a target="_blank" href="images/hothbilevel2.jpg">
+    				<img src="images/hothbilevel2.jpg" alt="nice bilevel home on the ice planet of Hoth." width="300" height="200">
+  				</a>
+  				<div class="desc">Another "house portrait".</div>
+			</div>
+		</content>
+		<content class="project-tile">
+			<div class="gallery">
+  				<a target="_blank" href="images/drake crest.jpg">
+    				<img src="images/drake crest.jpg" alt="family crest for the name drake" width="300" height="200">
+  				</a>
+  				<div class="desc">I researched and designed a unique crest for a line of the name Drake.</div>
+			</div>
+		</content>
+	</section>
+</body>
+</html>
