@@ -37,18 +37,18 @@
 		
 		
 		/* This is the code for the project blocks */
-		div.gallery {
+		div.project-tile {
 			margin: 5px;
     		border: 1px solid #ccc;
     		float: left;
     		width: 180px;
 			}
-		div.gallery:hover {
+		div.project-tile:hover {
 			border: 1px solid #777;
 			opacity: .5;
 			filter: alpha(opacity=50); /* For IE8 and earlier */
 			}
-		div.gallery img {
+		div.project-tile img {
 			width: 100%;
 			height: auto;
 			}
@@ -57,7 +57,7 @@
     		text-align: center;
 			}
 		.project-tile {
-			display: inline;
+			display: inline-block;
 			align-content: center;
 			}
 		
@@ -76,14 +76,17 @@
 		margin-left: 0px;}
 		ul {
 			list-style-type: none;
+			padding: 0;
 			text-transform: uppercase;
 			margin: auto;
 			}
 		li {
 			display: inline-block;
+			text-align: center;
 			}
-		li a {
+		li a:link {
 			text-decoration: none;
+			display: block;
 			color: black;
 			background-color:bisque;
 			padding: 10px;
@@ -93,6 +96,12 @@
 		li a:hover {
 			background-color:cornsilk;
 			}
+		li a:visited {
+			background-color:wheat;
+			}
+		li a:active {
+			background-color:wheat;
+			}
 		
 		
 		#welcome-section {
@@ -100,7 +109,7 @@
 			text-align: center;
 			height: 100%;
 			margin-top: 70px;
-			padding: 50px;
+			padding: 0px;
 			}
 		#projects-section {
 			}
@@ -125,16 +134,13 @@
 
 <body>
 	
-	<nav id="navbar" class="clearfix">
+	<nav id="navbar">
 	<!-- 
 		User Story #6: My portfolio should have a navbar with an id of "navbar".
 		User Story #7: The navba should contain at least one link that I can click on to navigate to different sections of the page. -->
 		<ul>
 			<li><a href="#welcome-section">About</a></li>
 			<li><a href="#projects-section">Projects</a></li>
-			<li><a id= "profile-link" href="https://github.com/publikwerker/" target="new">Profile</a></li>
-			<!-- 
-				User Story #8: My portfolio should have alink with an id of "profile-link", which opens my GitHub or FCC profile in a new tab. -->
 			<li><a href="#contact">Contact</a></li>
 		</ul>
 	</nav><br />
@@ -154,41 +160,54 @@
 	<!-- 
 		User Story #3: my portfolio should have a projects section with an id of "projets-section" -->
 		<h2>Projects</h2>
-		<content class="project-tile">
 		<!-- 
 			User Story #4: The projects section should contain at least one element with a class of "project-tile" to hold a project.
 			User Story #5: The projects section should contain at least one link to a project. -->
-			<div class="gallery">
-  				<a target="_blank" href="images/nancy commission.jpg">
-    				<img src="images/nancy commission.jpg" alt="cessna over an airfield" width="300" height="200">
-  				</a>
-  				<div class="desc">a commission for a pilot of his plane and his favorite airfield.</div>
-			</div>
-		</content>
-		<content class="project-tile">
-			<div class="gallery">
-  				<a target="_blank" href="images/falconflyby2.jpg">
-    				<img src="images/falconflyby2.jpg" alt="Millenium Falcon taking off over a nice split level ranch home." width="300" height="200">
-  				</a>
-  				<div class="desc">one of many "house portraits" I have been asked to do.</div>
-			</div>
-		</content>
-		<content class="project-tile">
-			<div class="gallery">
-  				<a target="_blank" href="images/hothbilevel2.jpg">
-    				<img src="images/hothbilevel2.jpg" alt="nice bilevel home on the ice planet of Hoth." width="300" height="200">
-  				</a>
-  				<div class="desc">Another "house portrait".</div>
-			</div>
-		</content>
-		<content class="project-tile">
-			<div class="gallery">
-  				<a target="_blank" href="images/drake crest.jpg">
-    				<img src="images/drake crest.jpg" alt="family crest for the name drake" width="300" height="200">
-  				</a>
-  				<div class="desc">I researched and designed a unique crest for a line of the name Drake.</div>
-			</div>
-		</content>
+			<h3>Websites</h3>
+				<div class="project-tile">
+						<a target="_blank" href="images/nancy commission.jpg">
+							<img src="images/nancy commission.jpg" alt="cessna over an airfield">
+						</a>
+						<div class="desc">a commission for a pilot of his plane and his favorite airfield.</div>
+				</div>
+				<div class="project-tile">
+					<a target="_blank" href="images/nancy commission.jpg">
+						<img src="images/nancy commission.jpg" alt="cessna over an airfield">
+					</a>
+					<div class="desc">a commission for a pilot of his plane and his favorite airfield.</div>
+				</div>
+			<h3>commissioned Drawings</h3>
+				<div class="project-tile">
+					<a target="_blank" href="images/falconflyby2.jpg">
+						<img src="images/falconflyby2.jpg" alt="Millenium Falcon taking off over a nice split level ranch home.">
+					</a>
+					<div class="desc">one of many "house portraits" I have been asked to do.</div>
+				</div>
+				<div class="project-tile">
+					<a target="_blank" href="images/hothbilevel2.jpg">
+						<img src="images/hothbilevel2.jpg" alt="nice bilevel home on the ice planet of Hoth.">
+					</a>
+					<div class="desc">Another "house portrait".</div>
+				</div>
+				<div class="project-tile">
+					<a target="_blank" href="images/drake crest.jpg">
+						<img src="images/drake crest.jpg" alt="family crest for the name drake">
+					</a>
+					<div class="desc">I researched and designed a unique crest for a line of the name Drake.</div>
+				</div>
+	</section>
+	<section id="contact-section">
+		<div>
+			<ul>
+				<li><a href="" target="new">Google+</a></li>
+				<li><a id="profile-link" href="https://github.com/publikwerker/" target="new">GitHub</a></li>
+			<!-- 
+				User Story #8: My portfolio should have alink with an id of "profile-link", which opens my GitHub or FCC profile in a new tab. -->
+				<li><a href="" target="new">email</a></li>
+				<li><a href="" target="new">Instagram</a></li>
+				<li><a href="" target="new">LinkedIn</a></li>
+			</ul>
+		</div>
 	</section>
 </body>
 </html>
