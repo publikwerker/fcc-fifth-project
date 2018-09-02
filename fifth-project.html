@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>fifth_project</title>
 	<style>
 		* {
@@ -13,35 +14,63 @@
 			margin: auto;
 			background-color: aliceblue;
 			}
+		#contact-section {
+			margin:auto;
+			padding-top: 50px;
+			clear: both;
+			}
+		#projects-section {
+			margin:auto;
+			}
+		#welcome-section {
+			overflow: auto;
+			}
 		h1 {
+			display: block;
 			margin: auto;
-			font-size: 1.6em;
+			font-size: 2em;
 			letter-spacing: 5px;
+			text-transform: uppercase;
+			padding-bottom: 40px;
 			}
 		h2 {
-			text-transform: none;
+			padding-bottom: 20px;
+			display: block;
+			width: 100%;
+			text-transform: capitalize;
 			text-align: center;
+			letter-spacing: 4px;
+			}
+		h3 {
+			display: block;
+			width: 100%;
+			text-transform: capitalize;
+			text-align: center;
+			letter-spacing: 4px;
 			}
 		p {
 			width: 80%;
 			margin: auto;
 			font-size: 1.2em;
-			line-height: 1.4;
+			line-height: 1.6;
 			text-indent: 20px;
 			text-align: left;
 			}
 		section {
-			margin-top: 20px;
-			border: 1px solid lightgray;}
+			width:100%;
+			display:block;
+			margin:auto;
 			}
 		
 		
 		/* This is the code for the project blocks */
 		div.project-tile {
+			display: inline-block;
+			align-content: center;
 			margin: 5px;
     		border: 1px solid #ccc;
     		float: left;
-    		width: 180px;
+    		width: 280px;
 			}
 		div.project-tile:hover {
 			border: 1px solid #777;
@@ -56,35 +85,26 @@
     		padding: 15px;
     		text-align: center;
 			}
-		.project-tile {
-			display: inline-block;
-			align-content: center;
-			}
-		
 		
 		/* This is the code for the navbar  */
-		#navbar {
+		nav ul {
 			position: fixed;
 			top:0;
-			display: inline-flex;
-			width: 100%;
+			width: 100vw;
 			background-color: aliceblue;
 			height: 70px;
 			padding-top: 20px;
 			padding-bottom: 20px;
-			align-content:center;
-		margin-left: 0px;}
-		ul {
 			list-style-type: none;
-			padding: 0;
+			text-align: center;
 			text-transform: uppercase;
 			margin: auto;
 			}
-		li {
+		nav ul li {
 			display: inline-block;
 			text-align: center;
 			}
-		li a:link {
+		nav ul li a:link {
 			text-decoration: none;
 			display: block;
 			color: black;
@@ -93,69 +113,93 @@
 			border: 2px solid bisque;
 			border-radius: 10px;
 			}
-		li a:hover {
+		nav ul li a:hover {
 			background-color:cornsilk;
 			}
-		li a:visited {
+		nav ul li a:visited {
 			background-color:wheat;
 			}
-		li a:active {
+		nav ul li a:active {
 			background-color:wheat;
 			}
 		
-		
-		#welcome-section {
+		p.dropdown {
+			position: relative;
+			display:inline-block;
+			display: none;
+			}
+		.revealer:hover p.dropdown {
+			display: inline-block
+			}
+		.splash {
 			display: block;
+			top:0;
 			text-align: center;
-			height: 100%;
-			margin-top: 70px;
-			padding: 0px;
+			height: 80vw;
+			padding-top: 20vw;
+			overflow:visible;
 			}
-		#projects-section {
+		ul.social {
+			list-style-type: none;
 			}
-		#contact-section {}
+		ul.social li {
+			display: inline-block;
+			text-align: center;
+			}
 		
-		@media screen and (max-width: 480px) {	
-			navbar {
-				width: 100%;
-				margin: auto;
-				justify-content: center;
+		@media screen and (max-width: 480px) {
+			nav {
+				width: 100vw;
+				display: block;
 				}
-			li {display: block;
+			nav ul li {
+				display: inline-block;
 				width: 100%;
-			align-content: space-around;
-			margin: auto;}
-			li a {
+				margin-left: -40px;
+				padding-top:5px;
+				}
+			nav ul li a {
 				text-align: center;
+				}
+			.project-tile {
+				width: 90vw;
+				margin: auto;
+				}
+			.splash {
+				padding-top: 200px;
+				height:auto;
 				}
 			}
 	</style>
 </head>
 
 <body>
-	
 	<nav id="navbar">
 	<!-- 
 		User Story #6: My portfolio should have a navbar with an id of "navbar".
-		User Story #7: The navba should contain at least one link that I can click on to navigate to different sections of the page. -->
+		User Story #7: The navbar should contain at least one link that I can click on to navigate to different sections of the page. -->
 		<ul>
 			<li><a href="#welcome-section">About</a></li>
 			<li><a href="#projects-section">Projects</a></li>
-			<li><a href="#contact">Contact</a></li>
+			<li><a href="#contact-section">Contact</a></li>
 		</ul>
 	</nav><br />
 	
-	<section id="welcome-section">
+	<section class="splash" id="welcome-section">
 	<!-- 
 		User Story #1: My porfolio should have a welcome setion with an id of "welcome-section" -->
-	<h1>Welcome to Publikwerks</h1>
+	<h1 class="revealer">Welcome to Publikwerks</h1>
 	<!--
 		User Story #2: The welcome section should have an h1 element that contains text. -->
-		<h2>Home to Publikwerker, Web Developer and  Fine Artist Extraordinaire</h2>
-		<p>After a brief stint in the US Navy, Publikwerker began his education at Kansas University. Initially a Physics major, Publikwerker soon switched to Communication Design, and eventually triple  majored in Graphic Design, Illustration, and Painting.</p>
-		<p>Ten years later, and over 1,500 miles away in Portland, Oregon, the Pacific Northwest College of Art graduated him with a Painting/Drawing degree. </p>
-		<p>For almost another decade, Publikwerker ran a commercial printing shop in S.E Portland. Now, he's taking his Fine Art background and his Production experience and applying it to Web Development.</p>
+		<div class="revealer">
+		<h2>Home to Publikwerker</h2>
+		<h3><em>Web Developer and  Fine Artist Extraordinaire</em></h3>
+		<p class="dropdown">After a brief stint in the US Navy, Publikwerker began his education at Kansas University. Initially a Physics major, Publikwerker soon switched to Communication Design, and eventually triple  majored in Graphic Design, Illustration, and Painting.</p>
+		<p class="dropdown">The MidWest proved too confining, so he set out Westward. Ten years later, and over 1,500 miles away in Portland, Oregon, the Pacific Northwest College of Art graduated him with a Painting/Drawing degree. </p>
+		<p class="dropdown">For almost another decade, Publikwerker ran a commercial printing shop in S.E Portland. Now, he's taking his Fine Art background and his Production experience and applying it to Web Development to offer the coveted Full Stack.</p>
+		</div>
 	</section>
+	
 	<section id="projects-section">
 	<!-- 
 		User Story #3: my portfolio should have a projects section with an id of "projets-section" -->
@@ -163,49 +207,48 @@
 		<!-- 
 			User Story #4: The projects section should contain at least one element with a class of "project-tile" to hold a project.
 			User Story #5: The projects section should contain at least one link to a project. -->
-			<h3>Websites</h3>
-				<div class="project-tile">
-						<a target="_blank" href="images/nancy commission.jpg">
-							<img src="images/nancy commission.jpg" alt="cessna over an airfield">
+				<div class="project-tile" title="See the code at GitHub">
+						<a target="_blank" href="https://github.com/publikwerker/fcc-first-css">
+							<img src="images/walter_cosmopolis_site.png" alt="tribute page for the world-famous Walter Cosmopolis">
 						</a>
-						<div class="desc">a commission for a pilot of his plane and his favorite airfield.</div>
+						<div class="desc">The first project was a tribute page. I chose to make one of the world famous Walter Cosmopolis, entertainer, humanitarian, philanthropist.</div>
 				</div>
 				<div class="project-tile">
-					<a target="_blank" href="images/nancy commission.jpg">
-						<img src="images/nancy commission.jpg" alt="cessna over an airfield">
+					<a target="_blank" href="https://github.com/publikwerker/fcc-second-css">
+						<img src="images/tarot_question.png" alt="Questionaire for a Tarot reading.">
 					</a>
-					<div class="desc">a commission for a pilot of his plane and his favorite airfield.</div>
-				</div>
-			<h3>commissioned Drawings</h3>
-				<div class="project-tile">
-					<a target="_blank" href="images/falconflyby2.jpg">
-						<img src="images/falconflyby2.jpg" alt="Millenium Falcon taking off over a nice split level ranch home.">
-					</a>
-					<div class="desc">one of many "house portraits" I have been asked to do.</div>
+					<div class="desc">The second project was a questionaire. I used the opportunity to prototype questions for the <a target="_blank" href="https://www.publikwerks.com/thelema-tarot-deck/tarot-deck-pre-order">Tarot Deck</a> I recently designed.</div>
 				</div>
 				<div class="project-tile">
-					<a target="_blank" href="images/hothbilevel2.jpg">
-						<img src="images/hothbilevel2.jpg" alt="nice bilevel home on the ice planet of Hoth.">
+					<a target="_blank" href="https://github.com/publikwerker/fcc-third-css">
+						<img src="images/volksland_site.png" alt="volksland landing page">
 					</a>
-					<div class="desc">Another "house portrait".</div>
+					<div class="desc">The third project was a product landing site. The product I chose was a Volkswagen automotive fan site which functions similarly to Craigslist.</div>
 				</div>
 				<div class="project-tile">
-					<a target="_blank" href="images/drake crest.jpg">
-						<img src="images/drake crest.jpg" alt="family crest for the name drake">
+					<a target="_blank" href="https://github.com/publikwerker/fcc-fourth-css">
+						<img src="images/js_documentation.png" alt="family crest for the name drake">
 					</a>
-					<div class="desc">I researched and designed a unique crest for a line of the name Drake.</div>
+					<div class="desc">The fourth project was to creat a JavaScript technical documentation page. Using the text from the example, I made the info a little cleaner.</div>
+				</div>
+				<div class="project-tile">
+					<a target="_blank" href="https://github.com/publikwerker/fcc-fifth-project">
+						<img src="images/publikwerks.png" alt="family crest for the name drake">
+					</a>
+					<div class="desc">The final project was to be a portfolio page. I chose to highlight the sites created for this course.</div>
 				</div>
 	</section>
 	<section id="contact-section">
+		<h2>Peruse my online presence</h2>
 		<div>
-			<ul>
-				<li><a href="" target="new">Google+</a></li>
+			<ul class="social">
+				<li><a href="https://plus.google.com/u/0/100625658231292552387/" target="new">Google+</a></li>
 				<li><a id="profile-link" href="https://github.com/publikwerker/" target="new">GitHub</a></li>
 			<!-- 
 				User Story #8: My portfolio should have alink with an id of "profile-link", which opens my GitHub or FCC profile in a new tab. -->
 				<li><a href="" target="new">email</a></li>
-				<li><a href="" target="new">Instagram</a></li>
-				<li><a href="" target="new">LinkedIn</a></li>
+				<li><a href="https://www.instagram.com/publikwerker/" target="new">Instagram</a></li>
+				<li><a href="https://www.linkedin.com/in/publikwerker/" target="new">LinkedIn</a></li>
 			</ul>
 		</div>
 	</section>
