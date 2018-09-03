@@ -8,43 +8,39 @@
 		* {
 			box-sizing:border-box;
 			}
+		
 		body {
 			font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
 			max-width: 1200px;
 			margin: auto;
 			background-color: aliceblue;
-			}
-		#contact-section {
-			margin:auto;
-			padding-top: 50px;
-			clear: both;
-			}
-		#projects-section {
-			margin:auto;
-			}
-		#welcome-section {
-			overflow: auto;
+			padding:0px;
+			display: block;
 			}
 		h1 {
-			display: block;
+			display: contents;
 			margin: auto;
 			font-size: 2em;
 			letter-spacing: 5px;
 			text-transform: uppercase;
 			padding-bottom: 40px;
+			width: 100%;
+			max-width: 1200px;
 			}
 		h2 {
 			padding-bottom: 20px;
-			display: block;
+			display: contents;
 			width: 100%;
-			text-transform: capitalize;
+			max-width: 1200px;
+			text-transform: none;
 			text-align: center;
 			letter-spacing: 4px;
 			}
 		h3 {
 			display: block;
 			width: 100%;
-			text-transform: capitalize;
+			max-width: 1200px;
+			text-transform: none;
 			text-align: center;
 			letter-spacing: 4px;
 			}
@@ -52,57 +48,46 @@
 			width: 80%;
 			margin: auto;
 			font-size: 1.2em;
-			line-height: 1.6;
+			line-height: 1.8;
 			text-indent: 20px;
 			text-align: left;
 			}
 		section {
 			width:100%;
+			max-width: 1200px;
+			overflow-x: hidden;
 			display:block;
 			margin:auto;
+			text-align: center;
 			}
 		
-		
-		/* This is the code for the project blocks */
-		div.project-tile {
-			display: inline-block;
-			align-content: center;
-			margin: 5px;
-    		border: 1px solid #ccc;
-    		float: left;
-    		width: 280px;
-			}
-		div.project-tile:hover {
-			border: 1px solid #777;
-			opacity: .5;
-			filter: alpha(opacity=50); /* For IE8 and earlier */
-			}
-		div.project-tile img {
-			width: 100%;
-			height: auto;
-			}
-		div.desc {
-    		padding: 15px;
-    		text-align: center;
-			}
 		
 		/* This is the code for the navbar  */
+		nav {
+			margin: auto;
+			text-align: center;
+			display: contents;
+			padding: 0px 0px 20px 0px;
+			}
 		nav ul {
 			position: fixed;
 			top:0;
 			width: 100vw;
+			max-width: 1200px;
 			background-color: aliceblue;
-			height: 70px;
+			height: 80px;
 			padding-top: 20px;
 			padding-bottom: 20px;
 			list-style-type: none;
 			text-align: center;
 			text-transform: uppercase;
 			margin: auto;
+			border-bottom: thin solid #909090;
 			}
 		nav ul li {
 			display: inline-block;
 			text-align: center;
+			padding:0px 20px;
 			}
 		nav ul li a:link {
 			text-decoration: none;
@@ -123,6 +108,18 @@
 			background-color:wheat;
 			}
 		
+		
+		/* This is for the welcome block */
+		#welcome-section {
+			top:0;
+			overflow-y: auto;
+			overflow-x: hidden;
+			margin: 0px;
+			padding-bottom: 100px;
+			background-color:cornsilk;
+			height: 100vh;
+			border: none;
+			}
 		p.dropdown {
 			position: relative;
 			display:inline-block;
@@ -133,37 +130,125 @@
 			}
 		.splash {
 			display: block;
+			background-color:burlywood;
 			top:0;
 			text-align: center;
-			height: 80vw;
 			padding-top: 20vw;
 			overflow:visible;
 			}
+		
+		
+		/* This is the code for the project block */
+		#projects-section {
+			margin:auto;
+			}
+		div.project-tile {
+			display: inline-block;
+			align-content: center;
+    		border: 1px solid #ccc;
+    		float: left;
+    		width: 280px;
+			margin:50px;
+			}
+		div.project-tile:hover {
+			border: 1px solid #777;
+			opacity: .5;
+			filter: alpha(opacity=50); /* For IE8 and earlier */
+			}
+		div.project-tile img {
+			width: 100%;
+			height: auto;
+			}
+		div.desc {
+    		padding: 15px;
+    		text-align: center;
+			}
+		.fcc {
+			font-family: courier, monospace;
+			font-size: 1em;
+			}
+		
+		
+		/*This is the contact section */
+		#contact-section {
+			margin:auto;
+			padding: 50px 0px;
+			clear: both;
+			width: 100%;
+			max-width: 1200px;
+			overflow: hidden;
+			background-color:burlywood;
+			}
 		ul.social {
 			list-style-type: none;
+			margin: 0px;
+			width: 100%;
+			padding-top: 50px;
 			}
 		ul.social li {
 			display: inline-block;
 			text-align: center;
+			padding:20px;
+			}
+		ul.social li a:link {
+			display: inline-block;
+			text-decoration: none;
+			color:black;
+			font-weight: bold;
+			margin: auto;
+			border: 2px solid bisque;
+			border-radius: 100%;
+			width: 100px;
+			height: 100px;
+			background-color: bisque;
+			text-transform: none;
+			line-height: 100px;
+			}
+		ul.social li a:hover {
+			background-color: antiquewhite;
 			}
 		
-		@media screen and (max-width: 480px) {
+		
+		/* User Story #9: My porfolio should have at least one media query.  */
+		@media screen and (max-width: 480px) { /* for small screens, i made everything one column */
+			body {
+				width:90vw;
+				margin:auto;
+				overflow-x:hidden;
+				height: 100%;
+				}
 			nav {
-				width: 100vw;
+				width: 80vw;
 				display: block;
+				margin: 0px;
+				padding: 0px;
+				}
+			nav ul {
+				height: 190px;
 				}
 			nav ul li {
 				display: inline-block;
-				width: 100%;
-				margin-left: -40px;
+				width: 80%;
+				margin-left: -60px;
 				padding-top:5px;
 				}
 			nav ul li a {
 				text-align: center;
 				}
 			.project-tile {
+				display: block;
 				width: 90vw;
 				margin: auto;
+				padding: 20px;
+				}
+			.social {
+				width: 90vw;
+				margin: 0;
+				padding: 0px;
+				}
+			.social li {
+				display:block;
+				margin: 0px;
 				}
 			.splash {
 				padding-top: 200px;
@@ -177,33 +262,36 @@
 	<nav id="navbar">
 	<!-- 
 		User Story #6: My portfolio should have a navbar with an id of "navbar".
-		User Story #7: The navbar should contain at least one link that I can click on to navigate to different sections of the page. -->
+		User Story #7: The navbar should contain at least one link that I can click on to navigate to different sections of the page.
+		User Story #11: The navbar should always be at the top of the viewport. -->
 		<ul>
 			<li><a href="#welcome-section">About</a></li>
-			<li><a href="#projects-section">Projects</a></li>
+			<li><a href="#projects">Projects</a></li>
 			<li><a href="#contact-section">Contact</a></li>
 		</ul>
 	</nav><br />
 	
 	<section class="splash" id="welcome-section">
 	<!-- 
-		User Story #1: My porfolio should have a welcome setion with an id of "welcome-section" -->
-	<h1 class="revealer">Welcome to Publikwerks</h1>
+		User Story #1: My porfolio should have a welcome setion with an id of "welcome-section". -->
+	<h1>Welcome to Publikwerks</h1>
 	<!--
-		User Story #2: The welcome section should have an h1 element that contains text. -->
+		User Story #2: The welcome section should have an h1 element that contains text. 
+		User Story #10: The height of the welcome section should be equal to the height of the viewport. -->
 		<div class="revealer">
 		<h2>Home to Publikwerker</h2>
-		<h3><em>Web Developer and  Fine Artist Extraordinaire</em></h3>
-		<p class="dropdown">After a brief stint in the US Navy, Publikwerker began his education at Kansas University. Initially a Physics major, Publikwerker soon switched to Communication Design, and eventually triple  majored in Graphic Design, Illustration, and Painting.</p>
-		<p class="dropdown">The MidWest proved too confining, so he set out Westward. Ten years later, and over 1,500 miles away in Portland, Oregon, the Pacific Northwest College of Art graduated him with a Painting/Drawing degree. </p>
-		<p class="dropdown">For almost another decade, Publikwerker ran a commercial printing shop in S.E Portland. Now, he's taking his Fine Art background and his Production experience and applying it to Web Development to offer the coveted Full Stack.</p>
+		<h3><em>Web Developer and Fine Artist Extraordinaire</em></h3>
+		<p class="dropdown">After a brief stint in the US Navy, Publikwerker began his education at Kansas University. Initially a Physics major, Publikwerker soon switched to Communication Design.</p>
+		<p class="dropdown">After years spent upon the endless sea traveling the world, the MidWest proved too confining, and longing for the ocean air, Publikwerker again set out Westward.</p><p class="dropdown">Ten years later, and over 1,500 miles away in Portland, Oregon, the Pacific Northwest College of Art graduated him with a Bachelor of Fine Arts in Painting/Drawing. </p>
+		<p class="dropdown">For almost another decade, Publikwerker co-ran a commercial letterpress printing shop in S.E Portland. Now, he's taking his Fine Arts background and his Production experience and applying them to Web Development.</p><p class="dropdown">His talents are available for hire.</p>
 		</div>
 	</section>
 	
-	<section id="projects-section">
+	<section id="projects">
 	<!-- 
-		User Story #3: my portfolio should have a projects section with an id of "projets-section" -->
+		User Story #3: my portfolio should have a projects section with an id of "projects". -->
 		<h2>Projects</h2>
+		<h3><span class="fcc">freeCodeCamp</span> Responsive Web Design Projects</h3>
 		<!-- 
 			User Story #4: The projects section should contain at least one element with a class of "project-tile" to hold a project.
 			User Story #5: The projects section should contain at least one link to a project. -->
@@ -213,42 +301,42 @@
 						</a>
 						<div class="desc">The first project was a tribute page. I chose to make one of the world famous Walter Cosmopolis, entertainer, humanitarian, philanthropist.</div>
 				</div>
-				<div class="project-tile">
+				<div class="project-tile" title="See the code at GitHub">
 					<a target="_blank" href="https://github.com/publikwerker/fcc-second-css">
 						<img src="images/tarot_question.png" alt="Questionaire for a Tarot reading.">
 					</a>
 					<div class="desc">The second project was a questionaire. I used the opportunity to prototype questions for the <a target="_blank" href="https://www.publikwerks.com/thelema-tarot-deck/tarot-deck-pre-order">Tarot Deck</a> I recently designed.</div>
 				</div>
-				<div class="project-tile">
+				<div class="project-tile" title="See the code at GitHub">
 					<a target="_blank" href="https://github.com/publikwerker/fcc-third-css">
 						<img src="images/volksland_site.png" alt="volksland landing page">
 					</a>
 					<div class="desc">The third project was a product landing site. The product I chose was a Volkswagen automotive fan site which functions similarly to Craigslist.</div>
 				</div>
-				<div class="project-tile">
+				<div class="project-tile" title="See the code at GitHub">
 					<a target="_blank" href="https://github.com/publikwerker/fcc-fourth-css">
 						<img src="images/js_documentation.png" alt="family crest for the name drake">
 					</a>
 					<div class="desc">The fourth project was to creat a JavaScript technical documentation page. Using the text from the example, I made the info a little cleaner.</div>
 				</div>
-				<div class="project-tile">
+				<div class="project-tile" title="See the code at GitHub">
 					<a target="_blank" href="https://github.com/publikwerker/fcc-fifth-project">
 						<img src="images/publikwerks.png" alt="family crest for the name drake">
 					</a>
-					<div class="desc">The final project was to be a portfolio page. I chose to highlight the sites created for this course.</div>
+					<div class="desc">The final project was to be a portfolio page. I chose to highlight the sites created for this course. I will continue to update the list as I go. </div>
 				</div>
 	</section>
 	<section id="contact-section">
 		<h2>Peruse my online presence</h2>
 		<div>
 			<ul class="social">
-				<li><a href="https://plus.google.com/u/0/100625658231292552387/" target="new">Google+</a></li>
-				<li><a id="profile-link" href="https://github.com/publikwerker/" target="new">GitHub</a></li>
+				<li><a href="https://plus.google.com/u/0/100625658231292552387/" target="_blank">Google+</a></li>
+				<li><a id="profile-link" href="https://github.com/publikwerker/" target="_blank">GitHub</a></li>
 			<!-- 
 				User Story #8: My portfolio should have alink with an id of "profile-link", which opens my GitHub or FCC profile in a new tab. -->
-				<li><a href="" target="new">email</a></li>
-				<li><a href="https://www.instagram.com/publikwerker/" target="new">Instagram</a></li>
-				<li><a href="https://www.linkedin.com/in/publikwerker/" target="new">LinkedIn</a></li>
+				<li><a href="https://www.instagram.com/publikwerker/" target="_blank">Instagram</a></li>
+				<li><a href="https://www.linkedin.com/in/publikwerker/" target="_blank">LinkedIn</a></li>
+				<li><a href="mailto:hello@publikwerks.com" target="_blank">Email Me</a></li>
 			</ul>
 		</div>
 	</section>
